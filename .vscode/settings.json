@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "tusb.h": "c",
+        "tusb_config.h": "c",
+        "usb_descriptors.h": "c",
+        "hid_device.h": "c",
+        "stdlib.h": "c",
+        "lcd_bmp.h": "c"
+    }
+}
