@@ -23,10 +23,6 @@
  *
  */
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-
 #include "pico/cyw43_arch.h"
 #include "pico/multicore.h"
 #include "pico/stdlib.h"
@@ -37,29 +33,18 @@
 #include "usb_descriptors.h"
 
 #include "lcd.h"
+#include "main.h"
+
+static uint32_t blink_interval_ms = BLINK_NOT_MOUNTED;
 
 //--------------------------------------------------------------------+
 // MACRO CONSTANT TYPEDEF PROTYPES
 //--------------------------------------------------------------------+
 
-/* Blink pattern
- * - 250 ms  : device not mounted
- * - 1000 ms : device mounted
- * - 2500 ms : device is suspended
- */
-enum
-{
-  BLINK_NOT_MOUNTED = 250,
-  BLINK_MOUNTED = 1000,
-  BLINK_SUSPENDED = 2500,
-};
-
 void led_blinking_task(void);
 void hid_task(void);
 void core1_entry();
 void core0_entry();
-
-static uint32_t blink_interval_ms = BLINK_NOT_MOUNTED;
 
 /*------------- MAIN -------------*/
 int main(void)

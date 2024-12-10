@@ -9,6 +9,7 @@
         "cyw43_arch.h": "c",
         "lcd.h": "c",
         "lcd_touch.h": "c",
-        "lcd_driver.h": "c"
+        "lcd_driver.h": "c",
+        "multicore.h": "c"
     }
 }
