@@ -5,6 +5,10 @@
         "usb_descriptors.h": "c",
         "hid_device.h": "c",
         "stdlib.h": "c",
-        "lcd_bmp.h": "c"
+        "lcd_bmp.h": "c",
+        "cyw43_arch.h": "c",
+        "lcd.h": "c",
+        "lcd_touch.h": "c",
+        "lcd_driver.h": "c"
     }
 }

@@ -50,6 +50,7 @@ include_directories(./lib/sdcard)
 add_executable(pico-touch-keyboard 
     main.c
     usb_descriptors.c
+    lcd.c
     )
 
 pico_set_program_name(pico-touch-keyboard "pico-touch-keyboard")
@@ -59,10 +60,6 @@ pico_set_program_version(pico-touch-keyboard "0.1")
 pico_enable_stdio_uart(pico-touch-keyboard 0)
 pico_enable_stdio_usb(pico-touch-keyboard 1)
 
-# Add the standard library to the build
-target_link_libraries(pico-touch-keyboard
-        pico_stdlib)
-
 # Add the standard include files to the build
 target_include_directories(pico-touch-keyboard PRIVATE
   ${CMAKE_CURRENT_LIST_DIR}
@@ -71,6 +68,7 @@ target_include_directories(pico-touch-keyboard PRIVATE
 # Add any user requested libraries
 target_link_libraries(pico-touch-keyboard 
         pico_cyw43_arch_none
+        pico_multicore
         hardware_spi
         pico_stdlib
         tinyusb_device
